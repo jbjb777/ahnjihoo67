@@ -31,7 +31,29 @@
             text-align: center;
             perspective: 1000px; /* 3D 효과를 위한 설정 */
         }
+.bottom-left-logo {
+            position: absolute;
+            bottom: 20px; /* 바닥에서 20px 띄움 */
+            left: 20px;   /* 왼쪽에서 20px 띄움 */
+            z-index: 10;  /* 배경보다 위에 보이도록 설정 */
+            transition: transform 0.3s ease, opacity 0.3s ease;
+    display: flex;          /* 한 줄 배치 */
+    align-items: center;    /* 세로 가운데 정렬 */
+    gap: 10px;    
+      }
 
+        /* 로고 이미지 크기 조절 */
+        .bottom-left-logo img {
+            width: 120px;  /* 로고 가로 크기 (원하는 대로 조절 가능) */
+            height: auto;
+            display: block;
+        }
+
+        /* 로고에 마우스 올렸을 때 효과 */
+        .bottom-left-logo:hover {
+            transform: scale(1.05); /* 살짝 커짐 */
+            opacity: 0.8;          /* 살짝 투명해짐 */
+        }
         .moving-text {
             display: inline-block;
             font-size: 5rem;
@@ -56,7 +78,18 @@
         @keyframes textGradient {
             to { background-position: 200% center; }
         }
+        .text {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;            /* 흰색 글자 */
+    -webkit-text-fill-color: initial;
+    -webkit-background-clip: initial;
+    background: none;
+            
 
+            
+
+        }
         /* 글자가 왼쪽 오른쪽으로 계속 도는 애니메이션 */
         @keyframes crazyRotate {
             0% { transform: rotateY(-45deg) rotateX(10deg); }
@@ -84,6 +117,11 @@
     <div class="container">
         <div class="moving-text">🖕안지후 과학 0점 기원</div>
     </div>
+<a href="https://sharer.r-e.kr" target="_blank" class="bottom-left-logo">
 
+        <img src="logo.png" alt="로고">
+        <div class="text">JB</div>
+
+  </a>
 </body>
 </html>
