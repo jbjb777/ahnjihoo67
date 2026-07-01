@@ -54,30 +54,23 @@
             transform: scale(1.05); /* 살짝 커짐 */
             opacity: 0.8;          /* 살짝 투명해짐 */
         }
-        .moving-text {
-            display: inline-block;
-            font-size: 5rem;
-            font-weight: 900;
-            white-space: nowrap;
-            cursor: pointer;
-            
-            /* 3. 텍스트 자체 그라데이션 효과 */
-            background: linear-gradient(to right, #ffff00, #ff00ff, #00ffff, #ffff00);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            
-            /* 4. 애니메이션 합치기: 그라데이션 움직임 + 좌우 회전 */
-            animation: textGradient 1.5s linear infinite, crazyRotate 2s ease-in-out infinite;
-            
-            /* 5. 마우스 아웃 시 부드럽게 복구되는 트랜지션 */
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+.moving-text {
+    display: inline-block;
+    font-size: clamp(1.8rem, 8vw, 5rem);
+    font-weight: 900;
+    white-space: nowrap;
+    cursor: pointer;
 
-        /* 텍스트 내 그라데이션이 흐르는 애니메이션 */
-        @keyframes textGradient {
-            to { background-position: 200% center; }
-        }
+    background: linear-gradient(to right, #ffff00, #ff00ff, #00ffff, #ffff00);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: textGradient 1.5s linear infinite,
+               crazyRotate 2s ease-in-out infinite;
+
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
         .text {
     font-size: 2rem;
     font-weight: 900;
@@ -120,7 +113,7 @@
 <a href="https://sharer.r-e.kr" target="_blank" class="bottom-left-logo">
 
         <img src="logo.png" alt="로고">
-        <div class="text">JB</div>
+        <div class="text">Created by JB</div>
 
   </a>
 </body>
